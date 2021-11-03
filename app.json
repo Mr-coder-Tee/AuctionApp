@@ -2,8 +2,8 @@
   "expo": {
     "name": "AuctionApp",
     "slug": "AuctionApp",
-    "privacy":"public",
-    "description":"Reactive Cross Platform Auction App",
+    "privacy": "public",
+    "description": "Reactive Cross Platform Auction App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,6 +29,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "githubUrl": "https://github.com/Mr-coder-Tee/AuctionApp"
   }
 }

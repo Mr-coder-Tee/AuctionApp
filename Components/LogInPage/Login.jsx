@@ -107,7 +107,9 @@ const Login = ({navigation}) => {
           </View>
           <Text style={{...FONTS.body2,textAlign:'center',marginTop:20}}>
             New to AuctionApp?
-            <TouchableOpacity onPress={()=>navigation.navigate('SignUpPage')} activeOpacity={.7} style={{color:'blue'}}>Register.</TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('SignUpPage')} activeOpacity={.7} style={{color:'blue'}}>
+              <Text>Register.</Text>
+            </TouchableOpacity>
           </Text>
         </ScrollView>
       </View>

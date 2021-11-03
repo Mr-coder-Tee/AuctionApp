@@ -131,9 +131,9 @@ const SignUpPage = ({navigation}) => {
             <TouchableOpacity
               onPress={() => navigation.navigate("Login")}
               activeOpacity={0.7}
-              style={{ color: "blue" }}
+              
             >
-              LogIn
+              <Text style={{ color: "blue" }}>LogIn</Text>
             </TouchableOpacity>
           </Text>
         </ScrollView>

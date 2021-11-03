@@ -1,27 +1,74 @@
 import React from "react";
-import { View, Text, Image,Dimensions } from "react-native";
+import { View, Text, Image, Dimensions,TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
-const cardWidth=Dimensions.get('screen').width*.45
-const cardHeigh=Dimensions.get('screen').height*.35
+import { FONTS } from "../../Consts";
+const cardWidth = Dimensions.get("screen").width * 0.5;
+const cardHeigh = Dimensions.get("screen").height * 0.3;
 
-const AuctionCard = () => {
+const AuctionCard = ({data}) => {
+  const img = {
+    uri: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  };
   return (
-    <View style={{borderWidth:1,width:cardWidth,height:cardHeigh,marginRight:10}}>
-      <View>
-        <Image />
+    <TouchableOpacity
+        activeOpacity={.7}
+      style={{
+        width: cardWidth,
+        height: cardHeigh,
+        marginRight: 10,
+        padding: 10,
+        backgroundColor: "white",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 1
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 1.41,
+
+        elevation: 2,
+        borderRadius:10,
+      }}
+    >
+      <View style={{ width: "100%", height: "50%" }}>
+        <Image
+          source={data.img}
+          style={{ width: "100%", height: "100%" }}
+          resizeMode="cover"
+        />
       </View>
       <View>
-        <Text>0 days:5h:31m:25s</Text>
-        <Text>Product name</Text>
-        <View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginTop: 10
+          }}
+        >
+          <Text style={{ ...FONTS.body3, fontWeight: "600" }}>
+            0 days:5h:31m:25s
+          </Text>
+          <Text style={{ ...FONTS.body3, fontWeight: "600" }}>30 Bids</Text>
+        </View>
+        <Text style={{ ...FONTS.body3, fontWeight: "600" }}>{data.productname}</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 10
+          }}
+        >
           <View>
-            <Text>Current Bid</Text>
-            <Text>R3948.90</Text>
+            <Text style={{ ...FONTS.body3, fontWeight: "600" }}>
+              Current Bid
+            </Text>
+            <Text style={{ ...FONTS.body3, fontWeight: "600" }}>{data.currentBid}</Text>
           </View>
-          <Icon />
+          {/* <Icon name="chevron-right" type="font-awesome" /> */}
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

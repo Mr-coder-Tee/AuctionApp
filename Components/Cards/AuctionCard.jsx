@@ -5,10 +5,14 @@ import { FONTS } from "../../Consts";
 const cardWidth = Dimensions.get("screen").width * 0.5;
 const cardHeigh = Dimensions.get("screen").height * 0.3;
 
-const AuctionCard = ({data}) => {
+const AuctionCard = ({data,navigation}) => {
+
   const img = {
-    uri: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    uri: data.img
   };
+  // const img = {
+  //   uri: "https://images.pexels.com/photos/1037999/pexels-photo-1037999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  // };
   return (
     <TouchableOpacity
         activeOpacity={.7}
@@ -32,7 +36,7 @@ const AuctionCard = ({data}) => {
     >
       <View style={{ width: "100%", height: "50%" }}>
         <Image
-          source={data.img}
+          source={img}
           style={{ width: "100%", height: "100%" }}
           resizeMode="cover"
         />
@@ -45,18 +49,17 @@ const AuctionCard = ({data}) => {
             marginTop: 10
           }}
         >
-          <Text style={{ ...FONTS.body3, fontWeight: "600" }}>
+          <Text style={{ ...FONTS.body4, fontWeight: "600" }}>
             0 days:5h:31m:25s
           </Text>
-          <Text style={{ ...FONTS.body3, fontWeight: "600" }}>30 Bids</Text>
+          <Text style={{ ...FONTS.body4, fontWeight: "600" }}>{data.numberOfBids+" Bids"}</Text>
         </View>
-        <Text style={{ ...FONTS.body3, fontWeight: "600" }}>{data.productname}</Text>
+        <Text numberOfLines={1}  style={{ ...FONTS.body3, fontWeight: "bold" }}>{data.productname}</Text>
         <View
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
-            marginTop: 10
           }}
         >
           <View>

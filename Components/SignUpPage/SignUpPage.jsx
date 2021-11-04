@@ -11,7 +11,7 @@ import Styles from "./Styles";
 import { FONTS, COLORS, SIZES } from "../../Consts/index";
 import { Input, Button, Icon } from "react-native-elements";
 
-const SignUpPage = ({navigation}) => {
+const SignUpPage = ({ navigation }) => {
 
   const [viewPassword, setViewPassword] = useState(true);
   const [viewConfrimPassword, setViewConfirmPassword] = useState(true);
@@ -47,19 +47,19 @@ const SignUpPage = ({navigation}) => {
 
 
   const img = {
-    uri: "https://images.pexels.com/photos/3685175/pexels-photo-3685175.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    uri: "https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   };
 
   return (
     <SafeAreaView style={Styles.container}>
-      <ImageBackground
-        source={img}
-        resizeMode="cover"
-        style={Styles.backgroundImg}
-      ></ImageBackground>
-      <View style={Styles.mainContent}>
-        <Text style={{ ...FONTS.h1, fontWeight: "bold" }}>Sign up</Text>
-        <ScrollView>
+      <ScrollView>
+        <ImageBackground
+          source={img}
+          resizeMode="cover"
+          style={Styles.backgroundImg}
+        ></ImageBackground>
+        <View style={Styles.mainContent}>
+          <Text style={{ ...FONTS.h1, fontWeight: "bold" }}>Sign up</Text>
           <View style={Styles.altLoginView}>
             <TouchableOpacity activeOpacity={0.7} style={Styles.loginBtn}>
               <Icon name="google" type="font-awesome" color="#DB4437" />
@@ -99,7 +99,7 @@ const SignUpPage = ({navigation}) => {
             <Input
               placeholder="Password"
               leftIcon={<Icon name="lock" type="font-awesome" />}
-              rightIcon={<RenterPassworView/>}
+              rightIcon={<RenterPassworView />}
               secureTextEntry={viewPassword}
             />
           </View>
@@ -107,7 +107,7 @@ const SignUpPage = ({navigation}) => {
             <Input
               placeholder="Confrim password"
               leftIcon={<Icon name="lock" type="font-awesome" />}
-              rightIcon={<RenterConfirmPassworView/>}
+              rightIcon={<RenterConfirmPassworView />}
               secureTextEntry={viewConfrimPassword}
             />
           </View>
@@ -126,18 +126,23 @@ const SignUpPage = ({navigation}) => {
             }}
           />
 
-          <Text style={{ ...FONTS.body2, textAlign: "center", marginTop: 20 }}>
-            Already in AuctionApp?
+
+          <View style={{flexDirection:'row',justifyContent:'center', marginTop: 20}}>
+
+            <Text style={{ ...FONTS.body2 }}>
+              Already in AuctionApp?
+
+            </Text>
             <TouchableOpacity
               onPress={() => navigation.navigate("Login")}
               activeOpacity={0.7}
-              
+
             >
-              <Text style={{ color: "blue" }}>LogIn</Text>
+              <Text style={{ color: "blue", ...FONTS.body2 }}>LogIn</Text>
             </TouchableOpacity>
-          </Text>
-        </ScrollView>
-      </View>
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

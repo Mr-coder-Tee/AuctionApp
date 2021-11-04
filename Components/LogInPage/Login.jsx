@@ -11,7 +11,7 @@ import Styles from "./Styles";
 import { FONTS, COLORS, SIZES } from "../../Consts/index";
 import { Input, Button, Icon } from "react-native-elements";
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [viewPassword, setViewPassword] = useState(true);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -43,16 +43,16 @@ const Login = ({navigation}) => {
   );
 
 
-  const img={uri:'https://images.pexels.com/photos/5665104/pexels-photo-5665104.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'}
+  const img = { uri: 'https://images.pexels.com/photos/5665104/pexels-photo-5665104.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260' }
 
 
   return (
     <SafeAreaView style={Styles.container}>
-      <ImageBackground source={img} resizeMode="cover" style={Styles.backgroundImg}>
-      </ImageBackground>
-      <View style={Styles.contentContainer}>
-        <Text style={{ ...FONTS.h1, fontWeight: "bold" }}>Login</Text>
-        <ScrollView>
+      <ScrollView>
+        <ImageBackground source={img} resizeMode="cover" style={Styles.backgroundImg}>
+        </ImageBackground>
+        <View style={Styles.contentContainer}>
+          <Text style={{ ...FONTS.h1, fontWeight: "bold" }}>Login</Text>
           <Rendererror />
           <View>
             <Input
@@ -68,7 +68,7 @@ const Login = ({navigation}) => {
               secureTextEntry={viewPassword}
             />
           </View>
-          <TouchableOpacity onPress={()=>navigation.navigate('Forgotten')} activeOpacity={.7} style={{ marginTop: 20, marginBottom: 20 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('Forgotten')} activeOpacity={.7} style={{ marginTop: 20, marginBottom: 20 }}>
             <Text
               style={{
                 color: "blue",
@@ -81,7 +81,7 @@ const Login = ({navigation}) => {
             </Text>
           </TouchableOpacity>
           <Button
-            onPress={()=>navigation.navigate('HomePage')}
+            onPress={() => navigation.navigate('HomePage')}
             title="Login"
             containerStyle={{
               borderRadius: 10
@@ -93,26 +93,30 @@ const Login = ({navigation}) => {
               color: 'white'
             }}
           />
-          <Text style={{marginBottom:20,marginTop:20,textAlign:'center',color:'gray',...FONTS.body3}}>or login with</Text>
+          <Text style={{ marginBottom: 20, marginTop: 20, textAlign: 'center', color: 'gray', ...FONTS.body3 }}>or login with</Text>
           <View style={Styles.altLoginView}>
             <TouchableOpacity activeOpacity={.7} style={Styles.loginBtn}>
-              <Icon name="google" type="font-awesome" color='#DB4437'/>
+              <Icon name="google" type="font-awesome" color='#DB4437' />
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={.7} style={Styles.loginBtn}>
-              <Icon name="facebook" type="font-awesome" color='#4267B2'/>
+              <Icon name="facebook" type="font-awesome" color='#4267B2' />
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={.7} style={Styles.loginBtn}>
-              <Icon name="mobile" type="font-awesome" color='#25D366'/>
+              <Icon name="mobile" type="font-awesome" color='#25D366' />
             </TouchableOpacity>
           </View>
-          <Text style={{...FONTS.body2,textAlign:'center',marginTop:20}}>
-            New to AuctionApp?
-            <TouchableOpacity onPress={()=>navigation.navigate('SignUpPage')} activeOpacity={.7} style={{color:'blue'}}>
-              <Text>Register.</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20 }}>
+
+            <Text style={{ ...FONTS.body2, textAlign: 'center', justifyContent: 'center' }}>
+              New to AuctionApp?
+
+            </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('SignUpPage')} activeOpacity={.7} style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{ ...FONTS.body2, textAlign: 'center', color: 'blue' }}>Register.</Text>
             </TouchableOpacity>
-          </Text>
-        </ScrollView>
-      </View>
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

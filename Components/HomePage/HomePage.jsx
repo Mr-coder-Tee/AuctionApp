@@ -25,7 +25,7 @@ import {
 const Tab = createBottomTabNavigator();
 const inputWidth = Dimensions.get("screen").width * 0.8;
 
-const HomePage = () => {
+const HomePage = ({navigation}) => {
   const RenderHeader = () => (
     <View style={Styles.header}>
       <View style={Styles.nameArea}>
@@ -68,7 +68,7 @@ const HomePage = () => {
     >
       <Tab.Screen
         name="home"
-        children={(props) => <HomeScreen props={props} />}
+        children={() => <HomeScreen navigation={navigation} />}
         options={{
           tabBarIcon: ({ focused }) => <Icon name="home" type="font-awesome" />
         }}

@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
     },
     header:{
         padding:10,
-        backgroundColor:COLORS.primary
+        backgroundColor:COLORS.primary,
+        marginTop:StatusBar.currentHeight,
     },
     nameArea:{
         flexDirection:'row',

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     altLoginView:{
         flexDirection:'row',
         padding:10,
-        justifyContent:'center'
+        justifyContent:'center',
     },
     loginBtn:{
         borderWidth:1,

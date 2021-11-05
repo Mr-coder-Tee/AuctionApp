@@ -2,7 +2,7 @@ import { StyleSheet, StatusBar, Dimensions } from "react-native";
 import { FONTS, COLORS, SIZES, Height, Width } from "../../Consts/index";
 const footerHight = Dimensions.get("screen").height * 0.08;
 const height=Dimensions.get('screen').height
-
+const bottomPadding=Dimensions.get('screen').height*.3
 
 const styles = StyleSheet.create({
   container: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   scrowller: {
     padding: 10,
     minHeight:height,
-    paddingBottom:150
+    paddingBottom:bottomPadding
   },
   msg: {
     borderColor: "rgba(0,0,0,.1)",

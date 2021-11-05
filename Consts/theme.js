@@ -5,6 +5,9 @@ export const COLORS={
     primary:'#12c2e9',
     secondary:'#c471ed',
     danger:"#dc3545",
+    tartiaty:'#8E2DE2',
+    sender:'#B06AB3',
+    reciever:'#4568DC'
 }
 
 export const SIZES={

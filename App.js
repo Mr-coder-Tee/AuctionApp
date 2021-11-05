@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { HomePage, Login, SignUpPage, SplashScreen, WelcomePage,ForgottenPassword,ViewPost } from "./Components/index";
+import { HomePage, Login, SignUpPage, SplashScreen, WelcomePage,ForgottenPassword,ViewPost,Chat } from "./Components/index";
 
 const Stack = createStackNavigator();
 
@@ -23,6 +23,7 @@ export default function App() {
         <Stack.Screen name='WelcomePage' component={WelcomePage}/>
         <Stack.Screen name='Forgotten' component={ForgottenPassword}/>
         <Stack.Screen name='ViewPost' component={ViewPost}/>
+        <Stack.Screen name='Chat' component={Chat}/>
         {/* <Stack.Screen name='' component={}/> */}
 
       </Stack.Navigator>

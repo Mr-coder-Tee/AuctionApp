@@ -89,7 +89,7 @@ const HomePage = ({navigation}) => {
       />
       <Tab.Screen
         name="Massages"
-        children={(props) => <Massages props={props} />}
+        children={(props) => <Massages navigation={navigation} />}
         options={{
           tabBarIcon: ({ focused }) => (
             <Icon name="comments" type="font-awesome" />
